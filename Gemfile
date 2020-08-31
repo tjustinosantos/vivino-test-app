@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'rack', '~> 2.0.1'
+gem 'rspec'
+gem 'cucumber'
+gem 'appium_lib', '~> 8.0', '>= 8.0.2'
+gem 'pry'
