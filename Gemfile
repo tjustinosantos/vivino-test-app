@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
-gem 'rack', '~> 2.0.1'
-gem 'rspec'
+gem 'appium_lib', '~> 10.6.0'
+gem 'appom'
 gem 'cucumber'
-gem 'appium_lib', '~> 8.0', '>= 8.0.2'
-gem 'pry'
+gem 'rspec'
+gem 'rubocop'
