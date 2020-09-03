@@ -2,6 +2,7 @@
 
 require 'appium_lib'
 require 'appom'
+require 'rspec'
 
 appium_lib_options = {
   server_url: 'http://0.0.0.0:4723/wd/hub'
@@ -24,5 +25,5 @@ Appom.register_driver do
   Appom.configure do |config|
     config.max_wait_time = 10
   end
-  $driver = Appium::Driver.new(options, false)
+  DRIVER = Appium::Driver.new(options, false)
 end

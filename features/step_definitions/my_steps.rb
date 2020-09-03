@@ -37,10 +37,6 @@ When(/^I tap on Done on confirmation pop\-up$/) do
   @wine.closeButton.click
 end
 
-Then(/^I check for confirmation pop\-up$/) do
-  pending
-end
-
 When(/^I add it to a Wishlist$/) do
   @wine = Wine.new
   wait_for { @wine.soldBuyText.displayed? }
@@ -52,37 +48,10 @@ Then(/^the wine was whishlisted$/) do
   expect(@wine.wishButton.Checked).to eq('true')
 end
 
-And(/^I click on all reviews$/) do
-  pending
-end
-
-Then(/^the review page opens successfully$/) do
-  pending
-end
-
 When(/^I select a category type$/) do
   @search = Search.new
   wait_for  { @search.filterTabs.typeTab.Displayed }
   @search.filterTabs.typeTab.click
-end
-
-And(/^I select an item (.*)$/) do |item|
-  @search = Search.new
-  log('Menu item text')
-  @search.categoriesList.categoriesItens.each do |menu_item|
-    log('Menu item text')
-    log(menu_item.categoryText.text)
-    log('Item text')
-    log(item)
-    if menu_item.categoryText.text == item
-      menu_item.categoryText.text
-      break
-    end
-  end
-end
-
-When(/^I tap on the first $/) do
-  pending
 end
 
 Then(/^I check that the rate has been given$/) do
@@ -108,7 +77,9 @@ end
 
 Then(/^I can view popular wine places$/) do
   @search = Search.new
-  @search.validate_popular_places
+  @search.popularSearchPlace.popularSearchPlaceItem.each do |place|
+    expect(place.Displayed).to eq('true')
+  end
 end
 
 And(/^I tap on type tab$/) do
@@ -118,7 +89,7 @@ end
 
 And(/^I click on first category$/) do
   @search = Search.new
-  @search.categoriesList.categoriesItens[0].click
+  @search.categoriesList.categoriesItens[0].categoryText.click
 end
 
 Then(/^All Pairings option is displayed$/) do

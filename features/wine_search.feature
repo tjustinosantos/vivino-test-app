@@ -10,7 +10,7 @@ Feature: Wine search future
     Then the wine page show its content correctly
 
   @smoketest @pageview
-  Scenario: Wine browsering by type
+  Scenario: Checking for popular wine places
     Given I tap on search tab
     And I scroll down
     Then I can view popular wine places

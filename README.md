@@ -1,7 +1,7 @@
 # Vivino test app
 
 ### About the project
-Simple test 
+Simple automation using ruby/cucumber/appium to test app-world-beta.apk
 
 ### Dependencies
 
@@ -27,10 +27,12 @@ gem 'rubocop'
                   |   +-- env.rb
                   |   +-- helper.rb
                   +-- wine_page.feature
+                  +-- wine_search.feature
                   +-- .gitignore
                   +-- Gemfile
                   +-- Gemfile.lock
                   +-- README.md
+                  +-- report.html
     
 ### Installation Instructions
 
@@ -60,12 +62,22 @@ gem 'rubocop'
 
 * Start appium (server url is already set to http://0.0.0.0:4723/wd/hub)
 
-            $ cucumber features --tags @create_page
+* Tests cases considered crucial 
 
-* Tests cases about creating a new page
+            $ cucumber features --tags @smoketest
 
-            $ cucumber features --tags @create_page
+* Tests cases about adding to wish list
 
-* Tests cases about setting restriction to a page
+            $ cucumber features --tags @wishlist
 
-            $ cucumber features --tags @set_restriction
+* Tests cases about checking page view
+
+            $ cucumber features --tags @pageview
+            
+* Tests cases about rating wine
+
+            $ cucumber features --tags @rating
+            
+Automation developed by using real device Samsung Galaxy S9+
+
+Report execution [here](report.html)

@@ -19,6 +19,7 @@ Feature: Test features available on Wine Page
     And I tap on Done on confirmation pop-up
     Then I check that the rate has been given
 
+  @wishlist
   Scenario: Adding wine to a Wishlist
     When I add it to a Wishlist
     Then the wine was whishlisted
